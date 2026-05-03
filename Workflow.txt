@@ -1,0 +1,55 @@
+Office Admin
+|-- Administrasi data barang keluar masuk
+
+
+User
+|-- Super Admin
+    -> Super Authority
+    -> Create User Account
+    -> 
+
+
+|-- Officer
+    -> In-Out Inventory & Stock
+
+|-- Common User
+    -> Stock Opname lister
+    -> Stock and Inventory Request
+
+
+Menu bar
+    -> Home
+        # Accessable All
+        * Index halaman utama
+        -> Dashboard Menu Makanan Ready
+        -> Dashboard Menu Minuman Ready
+        -> Dashboard Stock Kitchen Datang
+        -> Dashboard Stock Bar Datang
+    -> All Menu
+        # Accessable All, edit only for the related division
+        * Page ngedit list menu ready dan jumlahnya
+        -> Menu Minuman
+        -> Menu Makanan
+        -> Log Editor
+    -> Inventory
+        # Accessable All, edit only for the related division
+        * Page ngedit list inventory dan jumlahnya
+        -> Office
+        -> Bar
+        -> Kitchen
+        -> Log Editor
+    -> Stock
+        # Accessable All, edit only for the related division
+        * Page ngedit stock opname dan jumlahnya
+        -> Bar
+        -> Kitchen
+        -> Log Editor
+    -> Member
+        # Super Admin Only
+        * Page kuasa admin untuk membuat dan menghapus user akun
+        -> User Account Control
+    -> Settings
+        # Accessable All
+        * Page menyunting kebutuhan user akun
+        -> Ganti password
+        -> User Account Log

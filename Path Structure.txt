@@ -1,0 +1,62 @@
+NomadBiola/
+│
+├── app/                      # Core logic (brains of your system)
+│   ├── controllers/         # Handle requests (traffic cops) 
+│   │   ├── AdminController.php
+│   │   ├── StockController.php
+│   │   ├── InventoryController.php
+│   │   └── MenuController.php
+│   │
+│   ├── models/              # Database interaction (data miners)
+│   │   ├── Admin.php
+│   │   ├── Stock.php
+│   │   ├── Inventory.php
+│   │   └── Home.php
+│   │
+│   ├── views/               # UI templates (what users actually see)
+│   │   |-- admin/
+│   │   |-- stock/
+│   │   |-- inventory/
+│   │   |-- home/
+|   |   |-- layout/
+|   |   |   |-- header.php
+|   |   |   |-- footer.php
+|   |   |   |-- navbar.php
+│   │
+│   └── core/                # Base system (mini-framework vibes)
+│       ├── App.php          # Routing handler
+│       ├── Controller.php   # Base controller
+│       └── Database.php     # DB connection
+│
+├── config/                  # Configuration zone
+│   ├── config.php           # Base URL, constants
+│   └── database.php         # DB credentials
+│
+├── public/                  # Public access (ONLY this is exposed)
+│   ├── admin/               # Super User Access require
+│   ├── stock/
+|   |   |-- bar/
+|   |   |-- kitchen/
+│   ├── inventory/
+|   |   |-- office/
+|   |   |-- bar/
+|   |   |-- kitchen/
+│   ├── menu/
+│   │
+│   ├── assets/              # Static files
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   │
+│   ├── .htaccess            # URL rewriting (remove /public)
+│   └── index.php            # Entry point (front controller) & dashboard
+│
+├── routes/                  # Route definitions
+│   └── web.php
+│
+├── storage/                 # Logs, temp files
+│   └── logs/
+│
+├── vendor/                  # (Optional) Composer packages
+│
+└── .env                     # Environment variables
