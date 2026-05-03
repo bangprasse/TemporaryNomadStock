@@ -53,3 +53,20 @@ Menu bar
         * Page menyunting kebutuhan user akun
         -> Ganti password
         -> User Account Log
+
+
+LAYOUT SKETCH
+
+# desktop
+|navbar|content|
+
+# mobile
+|content|
+|navbar |
+
+
+screen media size
+
+# 4K :  > 1024
+# desktop : 1024 <= x < 768
+# mobile : <= 768
