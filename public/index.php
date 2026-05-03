@@ -4,6 +4,8 @@
 require_once('../config/config.php');
 echo "Base URL: " . BASE_URL;
 
+// 2.
+
 ?>
 
 <!DOCTYPE html>
