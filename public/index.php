@@ -2,9 +2,11 @@
 
 // 1. load configuration
 require_once('../config/config.php');
-echo "Base URL: " . BASE_URL;
 
-// 2.
+// 2. load database connection
+
+
+// 
 
 ?>
 
@@ -16,13 +18,20 @@ echo "Base URL: " . BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Nomad Biola Stock </title>
 
+    <!-- This Icon Still Error -->
+    <link rel="icon" href="<?= BASE_URL ?>assets/img/favicon.ico">
+
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
 </head>
 
 <body>
-    <!-- Header Section -->
+    <section class="navigation">
+        
+    </section>
 
+    <section class="content">
 
+    </section>
 </body>
 
 </html>

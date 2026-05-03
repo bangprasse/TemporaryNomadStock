@@ -43,7 +43,8 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: rgb(var(--text-color));
-    display: block;
+    display: flex;
+    flex-direction: row;
     background-color: rgb(var(--background-color));
 }
 
@@ -57,6 +58,8 @@ section,
 footer {
     display: block;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .align-item-center {
@@ -92,3 +95,43 @@ ion-icon {
 
 
 /* === CUSTOM STYLES === */
+section {
+    /* border: 1px solid red; */
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+section.navigation {
+    max-width: 20%;
+    height: 100%;
+    background-color: rgb(var(--primary-color));
+}
+
+@media (max-width: 768px) {
+    section.navigation {
+        width: 100%;
+        max-width: 100%;
+        height: 8%;
+
+        order: 2;
+        background-color: rgb(var(--primary-color));
+
+        border-radius: 18px 18px 0 0;
+    }
+}
+
+section.content{
+    max-width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    section.content {
+        order: 1;
+        height: 92%;
+    }
+}
