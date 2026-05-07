@@ -14,6 +14,8 @@ NomadBiola/
 │   │   └── Home.php
 │   │
 │   ├── views/               # UI templates (what users actually see)
+|   |   |-- auth/
+|   |   |   |-- login.php
 │   │   |-- admin/
 │   │   |-- stock/
 │   │   |-- inventory/

@@ -1,37 +1,19 @@
 <?php
 
-// 1. load configuration
-require_once('../config/config.php');
+// login detector
+require '../app/core/Auth.php';
+Auth::login_detector();
 
-// 2. load database connection
+require '../config/config.php';
 
-
-// 
+require '../app/views/layouts/header.php';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<section class="content">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nomad Biola Stock </title>
+</section>
 
-    <!-- This Icon Still Error -->
-    <link rel="icon" href="<?= BASE_URL ?>assets/img/favicon.ico">
+<?php
 
-    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
-</head>
-
-<body>
-    <section class="navigation">
-        
-    </section>
-
-    <section class="content">
-
-    </section>
-</body>
-
-</html>
+require '../app/views/layouts/footer.php';

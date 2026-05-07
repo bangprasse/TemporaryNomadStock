@@ -2,12 +2,12 @@
 
 require_once '../app/core/Controller.php';
 
-class InventoryController extends Controller
+class HomeController extends Controller
 {
 
     public function index()
     {
 
-        $this->view('inventory/index');
+        $this->view('home/index');
     }
 }
