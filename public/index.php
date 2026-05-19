@@ -8,12 +8,4 @@ require '../config/config.php';
 
 require '../app/views/layouts/header.php';
 
-?>
-
-<section class="content">
-
-</section>
-
-<?php
-
 require '../app/views/layouts/footer.php';

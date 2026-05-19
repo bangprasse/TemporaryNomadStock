@@ -3,6 +3,7 @@
 class Controller
 {
 
+    // global function to load ui in views
     public function view($view, $data = [])
     {
 

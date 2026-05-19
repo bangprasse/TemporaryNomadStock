@@ -1,21 +1,27 @@
 NomadBiola/
 │
-├── app/                      # Core logic (brains of your system)
-│   ├── controllers/         # Handle requests (traffic cops) 
-│   │   ├── AdminController.php
+├── app/                                # Core logic (brains of your system)
+│   ├── controllers/                    # Handle requests (traffic cops) 
+│   │   ├── AdminController.php         # Admin-related Request Flow
+|   |   |   -> show admin dashboard users
+|   |   |   -> CURD admin users
+│   │   ├── AuthController.php          # Login Auth System Flow
+|   |   |   - login()                   -> show login Page
+|   |   |   - admin_authentication()    -> admin Authentication method
 │   │   ├── StockController.php
 │   │   ├── InventoryController.php
 │   │   └── MenuController.php
 │   │
-│   ├── models/              # Database interaction (data miners)
-│   │   ├── Admin.php
+│   ├── models/                         # Database interaction (data miners)
+│   │   ├── Admin.php                   # user_tb interaction
+
 │   │   ├── Stock.php
 │   │   ├── Inventory.php
 │   │   └── Home.php
 │   │
-│   ├── views/               # UI templates (what users actually see)
-|   |   |-- auth/
-|   |   |   |-- login.php
+│   ├── views/                          # UI templates (what users actually see)
+|   |   |-- auth/                       # Authentication UI pages
+|   |   |   |-- login.php               # Login Page UI
 │   │   |-- admin/
 │   │   |-- stock/
 │   │   |-- inventory/
@@ -25,17 +31,24 @@ NomadBiola/
 |   |   |   |-- footer.php
 |   |   |   |-- navbar.php
 │   │
-│   └── core/                # Base system (mini-framework vibes)
-│       ├── App.php          # Routing handler
-│       ├── Controller.php   # Base controller
-│       └── Database.php     # DB connection
+│   └── core/                           # Base system (mini-framework vibes)
+│       ├── App.php                     # Routing handler
+│       ├── Auth.php                    # Auth related Base system
+|       |   - login_detector()          -> login detector method
+|       |   - login_create()            -> login session create
+│       ├── Controller.php              # Base controller
+│       ├── Hash.php                    # Self Defined Hash controller
+|       |   - create_hash()             -> create self defined hashing
+|       |   - verify_hash()             -> verify input password using hash
+│       └── Database.php                # DB connection
+|           - connecting()              -> make connection to database
 │
-├── config/                  # Configuration zone
-│   ├── config.php           # Base URL, constants
-│   └── database.php         # DB credentials
+├── config/                             # Configuration zone
+│   ├── config.php                      # Base URL, constants
+│   └── database.php                    # DB credentials
 │
-├── public/                  # Public access (ONLY this is exposed)
-│   ├── admin/               # Super User Access require
+├── public/                             # Public access (ONLY this is exposed)
+│   ├── admin/                          # Super User Access require
 │   ├── stock/
 |   |   |-- bar/
 |   |   |-- kitchen/
@@ -45,20 +58,21 @@ NomadBiola/
 |   |   |-- kitchen/
 │   ├── menu/
 │   │
-│   ├── assets/              # Static files
+│   ├── assets/                         # Static files
 │   │   ├── css/
 │   │   ├── js/
 │   │   └── images/
 │   │
-│   ├── .htaccess            # URL rewriting (remove /public)
-│   └── index.php            # Entry point (front controller) & dashboard
+│   ├── .htaccess                       # URL rewriting (remove /public)
+│   ├── auth.php                        # Forward Request to AuthController.php
+│   └── index.php                       # Entry point (front controller) & dashboard
 │
-├── routes/                  # Route definitions
+├── routes/                             # Route definitions
 │   └── web.php
 │
-├── storage/                 # Logs, temp files
+├── storage/                            # Logs, temp files
 │   └── logs/
 │
-├── vendor/                  # (Optional) Composer packages
+├── vendor/                             # (Optional) Composer packages
 │
-└── .env                     # Environment variables
+└── .env                                # Environment variables

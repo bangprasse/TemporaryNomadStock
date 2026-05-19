@@ -13,10 +13,13 @@
 
 /* === ROOT VARIABLES === */
 :root {
-  --primary-color: 129, 1, 0;
-  --secondary-color: 99, 0, 0;
+  --primary-color-1: 61, 49, 31;
+  --primary-color-2: 217, 122, 67;
+  --primary-color-3: 217, 43, 43;
+  --primary-color-4: 217, 137, 137;
+
   --background-color: 237, 235, 221;
-  --text-color: 27, 23, 23;
+  --text-color: 51, 51, 51;
 
 }
 
@@ -46,6 +49,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color: rgb(var(--background-color));
+    padding: 10px;
     
 }
 
@@ -96,28 +100,214 @@ ion-icon {
 
 
 /* === CUSTOM STYLES === */
+@media (max-width: 768px) {
+    body {
+        padding: 0px;
+    }
+}
+
 section {
     margin: 0;
     padding: 0;
 }
 
-section.navigation {
-    /* border: 1px solid red; */
-    width: 20%;
+section.login-section {
+    width: 100%;
     height: 100%;
-    background-color: rgb(var(--primary-color));
-    border-radius: 0 25px 25px 0;
-    display: block;
+    display: flex;
     padding: 15px;
+    background-color: rgb(var(--primary-color));
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
-    section.navigation {
-        width: 100%;
-        height: 80px;
-        z-index: 999;
-
-        position: fixed;
-        bottom: 0;
+    section.login-section {
+        padding: 0px;
     }
+}
+
+.login-section .login-card {
+    width: 70%;
+    height: 85%;
+    background-color: none;
+    /* border: 3px solid rgb(var(--background-color)); */
+    border-radius: 15px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .login-section .login-card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px;
+        background: linear-gradient(
+            45deg,
+            rgb(var(--primary-color-3)),
+            rgb(var(--primary-color-4)),
+            rgb(var(--primary-color-2))
+        );
+    }
+}
+
+.login-section .login-card .login-logo {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+            45deg,
+            rgb(var(--primary-color-3)),
+            rgb(var(--primary-color-4)),
+            rgb(var(--primary-color-2))
+    );
+    
+    backdrop-filter: blur(12px);
+    color: rgb(var(--background-color));
+}
+
+@media (max-width: 768px) {
+    .login-section .login-card .login-logo {
+        width: 100%;
+        height: 40%;
+        background: none;
+    }
+}
+
+.login-logo .logos {
+    width: fit-content;
+    height: fit-content;
+}
+
+.login-logo .logos h2 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.login-section .login-card .login-content {
+    width: 55%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .login-section .login-card .login-content {
+        width: 100%;
+        height: 60%;
+        background: rgb(var(--background-color));
+        border-radius: 25px 25px 0 0;
+    }
+}
+
+.login-content .head-login {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.login-content .input-login {
+    width: 75%;
+    height: 32px;
+    margin-bottom: 30px;
+    display: flex;
+    border-bottom: 3px solid rgba(var(--text-color),0.8);
+}
+
+.input-login ion-icon {
+    font-size: 26px;
+    color: rgba(var(--text-color),1);
+}
+
+.input-login input {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+}
+
+.input-login input::placeholder {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.input-login input:focus {
+    outline: none;
+    border: none;
+    color: rgb(var(--text-color));
+    font-weight: 600;
+}
+
+.input-login input:focus-visible {
+    color: rgb(var(--text-color));
+    font-weight: 600;
+}
+
+.login-content .input-btn {
+    width: 75%;
+    height: 32px;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .login-content .input-btn {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.input-btn button {
+    width: fit-content;
+    height: 100%;
+    padding: 0px 20px;
+    font-size: 16px;
+    font-weight: 550;
+    color: rgb(var(--background-color));
+    background-color: rgb(var(--primary-color-2));
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .input-btn button {
+        width: 100%;
+        height: fit-content;
+        padding: 10px 0px;
+        margin-bottom: 25px;
+    }
+}
+
+.input-btn button:hover {
+    background-color: rgb(var(--primary-color-3));
+    color: rgb(var(--background-color));
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.navigation {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(var(--primary-color-1));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
 }
